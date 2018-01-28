@@ -1,5 +1,5 @@
 import { Is } from "./is";
-import $ from "jquery";
 
-$("#true").text(`Validação: ${Is.Date(new Date())}`)
-$("#false").text(`Validação: ${Is.Date("hello")}`)
+console.info(`Is a date object: ${Is.Date(new Date())}\n`);
+
+console.error(`Is a date object: ${Is.Date("hello")}`);
