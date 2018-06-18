@@ -1,6 +1,6 @@
 {
   "name": "is",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "\"# ts-is-date-object\"",
   "main": "webpack.config.js",
   "scripts": {
