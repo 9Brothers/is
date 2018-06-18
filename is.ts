@@ -26,52 +26,52 @@ import { IsTypedArray } from "./is-checkers/is-typedarray";
 import { IsUtf8 } from "./is-checkers/is-utf8";
 
 export class Is {
-  public static AbsoluteUrl(url): boolean {
+  public static AbsoluteUrl(url: string): boolean {
 
     return IsAbsosuteUrl.Check(url);
   }
   
-  public static Date(value): boolean {
+  public static Date(value: any): boolean {
     
     return IsDateObject.Check(value);
   }
 
-  public static AccessorDescriptor(obj, prop, key?): boolean {
+  public static AccessorDescriptor(obj: any, prop: any, key?: any): boolean {
 
     return IsAccessorDescriptor.Check(obj, prop, key);
   }
 
-  public static Arrayish(obj): boolean {
+  public static Arrayish(obj: any): boolean {
 
     return IsArrayish.Check(obj);
   }
 
-  public static Callable(value): boolean {
+  public static Callable(value: any): boolean {
 
     return IsCallable.Check(value);
   }
 
-  public static DataDescriptor(obj, prop): boolean {
+  public static DataDescriptor(obj: any, prop: any): boolean {
 
     return IsDataDescriptor.Check(obj, prop);
   }
 
-  public static Descriptor(obj, key): boolean {
+  public static Descriptor(obj: any, key: any): boolean {
 
     return IsDescriptor.Check(obj, key);
   }
 
-  public static Dotfile(str): boolean {
+  public static Dotfile(str: any): boolean {
 
     return IsDotFile.Check(str);
   }
 
-  public static EqualShallow(a, b): boolean {
+  public static EqualShallow(a: any, b: any): boolean {
     
     return IsEqualShallow.Check(a, b);
   }
 
-  public static Extendable(val): boolean {
+  public static Extendable(val: any): boolean {
     
     return IsExtendable.Check(val);
   }
@@ -81,42 +81,42 @@ export class Is {
     return IsExtGlob.Check(str);
   }
 
-  public static Finite(val): boolean {
+  public static Finite(val: any): boolean {
 
     return IsFinite.Check(val);
   }
 
-  public static FullwidthCodePoint(x): boolean {
+  public static FullwidthCodePoint(x: any): boolean {
 
     return IsFullwidthCodePoint.Check(x);
   }
 
-  public static Glob(str: string, options): boolean {
+  public static Glob(str: string, options: any): boolean {
 
     return IsGlob.Check(str, options)
   }
 
-  public static Number(num): boolean {
+  public static Number(num: any): boolean {
 
     return IsNumber.Check(num);
   }
   
-  public static Odd(num): boolean {
+  public static Odd(num: any): boolean {
 
     return IsOdd.Check(num);
   }
 
-  public static NaN(x): boolean {
+  public static NaN(x: any): boolean {
 
     return NumberIsNaN.Check(x);
   }
 
-  public static PlainObj(x): boolean {
+  public static PlainObj(x: any): boolean {
 
     return IsPlainObj.Check(x);
   }
 
-  public static PlainObject(o): boolean {
+  public static PlainObject(o: any): boolean {
 
     return IsPlainObject.Check(o);
   }
@@ -126,7 +126,7 @@ export class Is {
     return IsPosixBracket.Check(str);
   }
 
-  public static Primitive(value): boolean {
+  public static Primitive(value: any): boolean {
 
     return IsPrimitive.Check(value);
   }
@@ -136,42 +136,42 @@ export class Is {
     return IsProperty.Check(str);
   }
 
-  public static Stream(stream): boolean {
+  public static Stream(stream: any): boolean {
 
     return IsStream.Check(stream);
   }
 
-  public static StreamWritable(stream): boolean {
+  public static StreamWritable(stream: any): boolean {
 
     return IsStream.Writable(stream);
   }
 
-  public static StreamReadable(stream): boolean {
+  public static StreamReadable(stream: any): boolean {
 
     return IsStream.Readable(stream);
   }
 
-  public static StreamDuplex(stream): boolean {
+  public static StreamDuplex(stream: any): boolean {
 
     return IsStream.Duplex(stream);
   }
 
-  public static StreamTransform(stream): boolean {
+  public static StreamTransform(stream: any): boolean {
 
     return IsStream.Transform(stream);
   }
 
-  public static Symbol(value): boolean {
+  public static Symbol(value: any): boolean {
 
     return IsSymbol.Check(value)
   }
 
-  public static TypedArray(arr): boolean {
+  public static TypedArray(arr: any): boolean {
 
     return IsTypedArray.Check(arr);
   }
 
-  public static Utf8(bytes): boolean {
+  public static Utf8(bytes: any): boolean {
 
     return IsUtf8.Check(bytes);
   }
