@@ -13,10 +13,10 @@ export class IsAccessorDescriptor {
     get: 'function',
     set: 'function',
     configurable: 'boolean',
-    enumerable: 'boolean'
+    enumerable: 'boolean',    
   };
 
-  public static Check(obj, prop, key?): boolean {
+  public static Check(obj: any, prop: any, key?: any): boolean {
     if (KindOf.Check(prop) === 'string') {
       let val = Object.getOwnPropertyDescriptor(obj, prop);
       return KindOf.Check(val) !== 'undefined';
@@ -46,7 +46,7 @@ export class IsAccessorDescriptor {
         continue;
       }
 
-      if (KindOf.Check(obj[key]) === this.accessor[key]) {
+      if (KindOf.Check(obj[key]) === (<any>this.accessor)[key]) {
         continue;
       }
 
@@ -57,7 +57,7 @@ export class IsAccessorDescriptor {
     return true;
   }
 
-  private static Has(obj, key) {
+  private static Has(obj: any, key: any) {
     return {}.hasOwnProperty.call(obj, key);
   }
 }

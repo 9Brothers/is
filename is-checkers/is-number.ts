@@ -9,7 +9,7 @@ import { KindOf } from "../dependencies/kind-of";
 
 export class IsNumber {
 
-  public static Check(num) {
+  public static Check(num: any) {
 
     let type = KindOf.Check(num);
 

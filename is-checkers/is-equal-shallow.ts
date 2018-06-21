@@ -9,7 +9,7 @@ import { IsPrimitive } from "./is-primitive";
 
 export class IsEqualShallow {
 
-  public static Check(a, b) {
+  public static Check(a: any, b: any) {
     if (!a && !b) { return true; }
     if (!a && b || a && !b) { return false; }
 

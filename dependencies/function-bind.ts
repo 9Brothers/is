@@ -4,7 +4,7 @@ export class FunctionBind {
   private static toStr = Object.prototype.toString;
   private static funcType = '[object Function]';
 
-  public static Bind(that) {
+  public static Bind(that: any) {
 
     let target = this;
     if (typeof target !== 'function' || this.toStr.call(target) !== this.funcType) {
@@ -12,7 +12,7 @@ export class FunctionBind {
     }
     let args = this.slice.call(arguments, 1);
 
-    let bound;
+    let bound: any;
     let binder = function () {
       if (this instanceof bound) {
         let result = target.apply(
@@ -40,7 +40,7 @@ export class FunctionBind {
     bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this,arguments); }')(binder);
 
     if (target.prototype) {
-      let Empty = function Empty() { };
+      let Empty: any = function Empty() { };
       Empty.prototype = target.prototype;
       bound.prototype = new Empty();
       Empty.prototype = null;

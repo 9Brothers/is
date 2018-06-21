@@ -13,14 +13,14 @@ export class IsTypedArray {
 
   private static toString = Object.prototype.toString;
 
-  public static Check(arr) {
+  public static Check(arr: any) {
     return (
       this.IsStrictTypedArray(arr)
       || this.IsLooseTypedArray(arr)
     )
   }
 
-  private static IsStrictTypedArray(arr) {
+  private static IsStrictTypedArray(arr: any) {
     return (
       arr instanceof Int8Array
       || arr instanceof Int16Array
@@ -34,7 +34,7 @@ export class IsTypedArray {
     )
   }
 
-  private static IsLooseTypedArray(arr) {
-    return this.names[toString.call(arr)]
+  private static IsLooseTypedArray(arr: any) {
+    return (<any>this.names)[toString.call(arr)]
   }
 }

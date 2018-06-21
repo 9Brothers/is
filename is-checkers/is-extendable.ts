@@ -6,7 +6,7 @@
  */
 
 export class IsExtendable {
-  public static Check(val) {
+  public static Check(val: any) {
     return typeof val !== 'undefined' && val !== null
     && (typeof val === 'object' || typeof val === 'function');
   }

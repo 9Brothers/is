@@ -7,7 +7,7 @@
 
 export class IsObject {
   
-  public static Check(val) {
+  public static Check(val: any) {
     return val != null && typeof val === 'object' && Array.isArray(val) === false;
   }
 }

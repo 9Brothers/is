@@ -8,7 +8,7 @@
 import { IsNumber } from "./is-number";
 
 export class IsOdd {
-  public static Check(i) {
+  public static Check(i: any) {
     if (!IsNumber.Check(i)) {
       throw new TypeError('is-odd expects a number.');
     }

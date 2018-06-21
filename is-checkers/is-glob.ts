@@ -10,7 +10,7 @@ import { IsExtGlob } from "./is-extglob";
 export class IsGlob {
   private static chars = { '{': '}', '(': ')', '[': ']'};
 
-  public static Check(str: string, options) {
+  public static Check(str: string, options: any) {
     
     if (IsExtGlob.Check(str)) {
       return true;
@@ -31,7 +31,7 @@ export class IsGlob {
       // if an open bracket/brace/paren is escaped,
       // set the index to the next closing character
       var open = match[1];
-      var close = open ? this.chars[open] : null;
+      var close = open ? (<any>this.chars)[open] : null;
       if (open && close) {
         var n = str.indexOf(close, idx);
         if (n !== -1) {

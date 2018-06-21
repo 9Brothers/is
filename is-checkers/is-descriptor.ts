@@ -11,7 +11,7 @@ import { IsDataDescriptor } from "./is-data-descriptor";
 
 export class IsDescriptor {
 
-  public static Check(obj, key) {
+  public static Check(obj: any, key: any) {
     if (KindOf.Check(obj) !== 'object') {
       return false;
     }

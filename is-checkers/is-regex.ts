@@ -6,10 +6,10 @@ export class IsRegex {
   private static gOPD = Object.getOwnPropertyDescriptor;
   private static toStr = Object.prototype.toString;
   private static regexClass = '[object RegExp]';
-  private static hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
+  private static hasToStringTag = typeof Symbol === 'function' && typeof (<any>Symbol).toStringTag === 'symbol';
   private static has = FunctionBind.Bind.call;
 
-  public static Check(value) {
+  public static Check(value: any) {
     
     if (!value || typeof value !== 'object') {
       return false;
@@ -29,7 +29,7 @@ export class IsRegex {
     return this.TryRegexExecCall(value);
   }
 
-  private static TryRegexExecCall(value) {
+  private static TryRegexExecCall(value: any) {
     try {
       var lastIndex = value.lastIndex;
       value.lastIndex = 0;

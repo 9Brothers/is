@@ -1,7 +1,7 @@
 import { NumberIsNaN } from "../dependencies/number-is-nan";
 
 export class IsFullwidthCodePoint {
-  public static Check(x) {
+  public static Check(x: any) {
     if (NumberIsNaN.Check(x)) {
       return false;
     }

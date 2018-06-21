@@ -1,6 +1,6 @@
 export class IsUtf8 {
 
-  public static Check(bytes) {
+  public static Check(bytes: any) {
     let i = 0;
     while (i < bytes.length) {
       if ((// ASCII

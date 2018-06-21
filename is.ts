@@ -24,6 +24,7 @@ import { IsStream } from "./is-checkers/is-stream";
 import { IsSymbol } from "./is-checkers/is-symbol";
 import { IsTypedArray } from "./is-checkers/is-typedarray";
 import { IsUtf8 } from "./is-checkers/is-utf8";
+import { IsCnpj } from "./is-checkers/is-cnpj";
 
 export class Is {
   public static AbsoluteUrl(url: string): boolean {
@@ -174,5 +175,10 @@ export class Is {
   public static Utf8(bytes: any): boolean {
 
     return IsUtf8.Check(bytes);
+  }
+
+  public static Cnpj(value: string) {
+
+    return IsCnpj.Check(value);
   }
 }

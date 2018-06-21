@@ -8,10 +8,10 @@
 import { IsObject } from "./is-object";
 
 export class IsPlainObject {
-  private static ctor = null;
-  private static prot = null;
+  private static ctor: any = null;
+  private static prot: any = null;
 
-  public static Check(o) {
+  public static Check(o: any) {
     if (this.IsObjectObject(o) === false) return false;
 
     // If has modified constructor
@@ -31,7 +31,7 @@ export class IsPlainObject {
     return true;
   }
 
-  private static IsObjectObject(o) {
+  private static IsObjectObject(o: any) {
     return IsObject.Check(o) === true
     && Object.prototype.toString.call(o) === '[object Object]';
   }

@@ -1,6 +1,6 @@
 export class IsArrayish {
 
-  public static Check(obj) {
+  public static Check(obj: any) {
     if (!obj) {
       return false;
     }

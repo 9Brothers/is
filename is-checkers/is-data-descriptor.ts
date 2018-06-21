@@ -15,7 +15,7 @@ export class IsDataDescriptor {
     writable: 'boolean'
   };
   
-  public static Check(obj, prop) {
+  public static Check(obj: any, prop: any) {
     if (KindOf.Check(obj) !== 'object') {
       return false;
     }
@@ -36,7 +36,7 @@ export class IsDataDescriptor {
         continue;
       }
   
-      if (KindOf.Check(obj[key]) === this.data[key]) {
+      if (KindOf.Check(obj[key]) === (<any>this.data)[key]) {
         continue;
       }
   

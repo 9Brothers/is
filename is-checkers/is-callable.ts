@@ -1,3 +1,7 @@
+interface never {
+  toStringTag: any;
+}
+
 export class IsCallable {
   private static fnToStr = Function.prototype.toString;
   private static constructorRegex = /^\s*class /;
@@ -5,9 +9,9 @@ export class IsCallable {
   private static toStr = Object.prototype.toString;
   private static fnClass = '[object Function]';
   private static genClass = '[object GeneratorFunction]';
-  private static hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
+  private static hasToStringTag = typeof Symbol === 'function' && typeof (<any>Symbol).toStringTag === 'symbol';
 
-  public static Check(value) {
+  public static Check(value: any) {
     if (!value) { return false; }
     if (typeof value !== 'function' && typeof value !== 'object') { return false; }
     if (this.hasToStringTag) { return this.TryFunctionObject(value); }
@@ -16,7 +20,7 @@ export class IsCallable {
     return strClass === this.fnClass || strClass === this.genClass;
   }
 
-  private static IsES6ClassFn(value) {
+  private static IsES6ClassFn(value: any) {
     try {
       var fnStr = this.fnToStr.call(value);
       var singleStripped = fnStr.replace(/\/\/.*\n/g, '');
@@ -28,7 +32,7 @@ export class IsCallable {
     }
   }
 
-  private static TryFunctionObject(value) {
+  private static TryFunctionObject(value: any) {
     try {
       if (this.IsES6ClassFn(value)) { return false; }
       this.fnToStr.call(value);

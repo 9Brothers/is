@@ -6,7 +6,7 @@
  */
 
 export class IsDotFile {
-  public static Check(str) {
+  public static Check(str: any) {
     if (str.charCodeAt(0) === 46 /* . */ && str.indexOf('/', 1) === -1) {
       return true;
     }

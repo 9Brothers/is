@@ -12,7 +12,7 @@ import { IsBuffer } from "../is-checkers/is-buffer";
 export class KindOf {
   private toString = Object.prototype.toString;
 
-  public static Check(val) {
+  public static Check(val: any) {
     // primitivies
     if (typeof val === 'undefined') {
       return 'undefined';
